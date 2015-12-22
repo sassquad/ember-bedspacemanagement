@@ -1,0 +1,7 @@
+<h2 id="title">Welcome to Bed Space Management</h2>
+
+{{#each model as |centre|}}
+  {{#link-to 'centres' centre.id tagName='button'}}{{centre.name}}{{/link-to}}
+{{/each}}
+<br>
+{{outlet}}

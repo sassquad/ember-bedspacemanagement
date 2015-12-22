@@ -1,6 +1,6 @@
 /* jshint node: true */
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'ember-bedspacemanagement',
     environment: environment,
@@ -25,6 +25,14 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    /**
+     * Enable Ember CLI Mirage in development
+     *  To share a working prototype before Sails.js server is ready
+     */
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    }
   }
 
   if (environment === 'test') {
@@ -37,10 +45,22 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    /**
+     * Enable Ember CLI Mirage in testing
+     */
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    }
   }
 
   if (environment === 'production') {
-
+    /**
+     * Disable Ember CLI Mirage in production
+     */
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    }
   }
 
   return ENV;

@@ -2,7 +2,9 @@ import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('centre', 'Unit | Model | centre', {
   // Specify the other units that are required for this test.
-  needs: []
+  needs: [
+    model: centre
+  ]
 });
 
 test('it exists', function(assert) {

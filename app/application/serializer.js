@@ -4,6 +4,7 @@
  * Serializer by extending keyForAttribute and keyForRelationship. This does not match the JSONAPISerializer that
  * ships with Ember Data (matching the examples on http://jsonapi.org/format).
  */
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.JSONAPISerializer.extend({
